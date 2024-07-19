@@ -2,7 +2,7 @@ package handler
 
 import (
 	"net/http"
-	"os"
+	// "os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jacobsngoodwin/memrizr/account/model"
@@ -25,16 +25,20 @@ type Config struct {
 // Does not return as it deals directly with a reference to the gin Engine
 func NewHandler(c *Config) {
 	// Create a handler (which will later have injected services)
-	h := &Handler{} // currently has no properties
+	h := &Handler{
+		UserService : c.UserService,
+	} // currently has no properties
 
-	UserService : c.UserService,
+	
 	// Create an account group
-// Create an account group
-	ACCOUNT_API_URL := os.Getenv("ACCOUNT_API_URL")
-	if ACCOUNT_API_URL == "" {
-		ACCOUNT_API_URL = "/api/account"
-	}
-	g := c.R.Group(ACCOUNT_API_URL)
+
+	// ACCOUNT_API_URL := os.Getenv("ACCOUNT_API_URL")
+	// if ACCOUNT_API_URL == "" {
+	// 	ACCOUNT_API_URL = "/api/account"
+	// }
+	// g := c.R.Group(ACCOUNT_API_URL)
+	g := c.R.Group("/api/account")
+
 	g.GET("/me", h.Me)
 	g.POST("/signup", h.Signup)
 	g.POST("/signin", h.Signin)
