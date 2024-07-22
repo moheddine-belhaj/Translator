@@ -12,7 +12,7 @@ import (
 type MockUserService struct {
     mock.Mock
 }
-
+//testing
 // Get is mock of UserService Get
 func (m *MockUserService) Get(ctx context.Context, uid uuid.UUID) (*model.User, error) {
     // args that will be passed to "Return" in the tests, when function
