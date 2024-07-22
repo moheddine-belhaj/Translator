@@ -10,6 +10,8 @@ import (
 type Type string
 
 // "Set" of valid errorTypes
+// "Set" of valid errorTypes
+
 const (
 	Authorization   Type = "AUTHORIZATION"   // Authentication Failures -
 	BadRequest      Type = "BADREQUEST"      // Validation errors / BadInput
