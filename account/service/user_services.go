@@ -28,3 +28,8 @@ func NewUserService(userRepo model.UserRepository) *UserService {
 		UserRepository: userRepo,
 	}
 }
+
+
+func (s *UserService) Signup(ctx context.Context, u *model.User) error {
+	panic("Method not implemeted")
+}
