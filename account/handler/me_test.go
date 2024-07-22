@@ -1,4 +1,3 @@
-
 package handler
 
 import (
@@ -43,8 +42,8 @@ func TestMe(t *testing.T) {
 		router.Use(func(c *gin.Context) {
 			c.Set("user", &model.User{
 				UID: uid,
-			},
-			)
+			})
+			c.Next()
 		})
 
 		NewHandler(&Config{
@@ -52,7 +51,7 @@ func TestMe(t *testing.T) {
 			UserService: mockUserService,
 		})
 
-		request, err := http.NewRequest(http.MethodGet, "/me", nil)
+		request, err := http.NewRequest(http.MethodGet, "/api/account/me", nil)
 		assert.NoError(t, err)
 
 		router.ServeHTTP(rr, request)
@@ -81,7 +80,7 @@ func TestMe(t *testing.T) {
 			UserService: mockUserService,
 		})
 
-		request, err := http.NewRequest(http.MethodGet, "/me", nil)
+		request, err := http.NewRequest(http.MethodGet, "/api/account/me", nil)
 		assert.NoError(t, err)
 
 		router.ServeHTTP(rr, request)
@@ -102,8 +101,8 @@ func TestMe(t *testing.T) {
 		router.Use(func(c *gin.Context) {
 			c.Set("user", &model.User{
 				UID: uid,
-			},
-			)
+			})
+			c.Next()
 		})
 
 		NewHandler(&Config{
@@ -111,7 +110,7 @@ func TestMe(t *testing.T) {
 			UserService: mockUserService,
 		})
 
-		request, err := http.NewRequest(http.MethodGet, "/me", nil)
+		request, err := http.NewRequest(http.MethodGet, "/api/account/me", nil)
 		assert.NoError(t, err)
 
 		router.ServeHTTP(rr, request)
