@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -11,7 +10,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jacobsngoodwin/memrizr/handler"
+
 )
 
 func main() {
