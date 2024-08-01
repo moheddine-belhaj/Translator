@@ -14,7 +14,7 @@ import (
 )
 
 func TestNewPairFromUser(t *testing.T) {
-	priv, err := os.ReadFile("../rsa_private_test.pem")
+	priv, err := os.ReadFile("../rsa_private_dev.pem")
 	if err != nil {
 		t.Fatalf("Failed to read private key: %v", err)
 	}
@@ -22,7 +22,7 @@ func TestNewPairFromUser(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to parse private key: %v", err)
 	}
-	pub, err := os.ReadFile("../rsa_public_test.pem")
+	pub, err := os.ReadFile("../rsa_public_dev.pem")
 	if err != nil {
 		t.Fatalf("Failed to read public key: %v", err)
 	}
