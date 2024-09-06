@@ -16,9 +16,9 @@ services:
   postgres-account:
     image: postgres:alpine
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=0000
-      - POSTGRES_DB=postgres
+      - PG_USER=postgres
+      - PG_PASSWORD=0000
+      - PG_DB=postgres
     ports:
       - "5432:5432"
     volumes:
